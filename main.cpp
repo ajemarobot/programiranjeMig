@@ -20,6 +20,6 @@ int main() {
     graph.addEdgeMatrix(4, 5, 4);
 
     cout << "Max Flow (Ford-Fulkerson DFS): " << fordFulkersonDFS(graph, 0, 5) << endl;
-	cout << "Max Flow (Ford-Fulkerson BFS): " << fordFulkersonBFS(graph, 0, 5) << endl;
+	cout << "Max Flow (Edmonds-Karp BFS): " << edmondsKarp(graph, 0, 5) << endl;
 
    
