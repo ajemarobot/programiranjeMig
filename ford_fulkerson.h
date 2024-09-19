@@ -5,6 +5,6 @@
 #include "graph.h"
 
 int fordFulkersonDFS(Graph& graph, int source, int sink);
-int fordFulkersonBFS(Graph& graph, int source, int sink);
+
 
 #endif
