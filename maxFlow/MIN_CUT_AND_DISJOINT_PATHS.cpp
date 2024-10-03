@@ -61,6 +61,9 @@ vector<pair<int, vector<int>>> maxDisjointPaths(Graph& g, int source, int sink) 
         }
     }
     return disjointPaths;
+	///ova znaev deka nema vrska ama si go staiv kako place holder kodche za da ima neshto dur da mi tekne vistinskata stvar
+	///inaku dobiv edna nenormalno dobra idea vo 1 saat vecerta pred casot taka da andrej ne e kriv sto nema napraveno review na toj file
+	///zadackava ke ja premestam u drug file
 }
 
 void antz(Graph& g, int source, int sink) {
