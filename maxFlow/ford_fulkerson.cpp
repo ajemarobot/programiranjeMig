@@ -30,7 +30,7 @@ int fordFulkersonList(int s, int t, vector<vector<pair<int, int>>>& adj, vector<
     int maxFlow = 0;
     vector<int> parent(adj.size(), -1);
 
-    while (dfs(s, t, parent, adj, capacity)) {
+    while (dfs(graph, s, t, parent, adj, capacity)) {
         int pathFlow = INT_MAX;
         for (int v = t; v != s; v = parent[v]) {
             int u = parent[v];
