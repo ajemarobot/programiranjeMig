@@ -27,11 +27,11 @@ int edmondsKarp(Graph& graph, int source, int sink) {
     return maxFlow;
 }
 
-int edmondsKarpList(int s, int t, vector<vector<pair<int, int>>>& adj, vector<vector<int>>& capacity) {
+int edmondsKarpList(Graph& graph, int s, int t, vector<vector<pair<int, int>>>& adj, vector<vector<int>>& capacity) {
     int maxFlow = 0;
     vector<int> parent(adj.size(), -1);
 
-    while (bfs(s, t, parent, adj, capacity)) {
+    while (bfs(graph, s, t, parent, adj, capacity)) {
         int pathFlow = INT_MAX;
         for (int v = t; v != s; v = parent[v]) {
             int u = parent[v];
