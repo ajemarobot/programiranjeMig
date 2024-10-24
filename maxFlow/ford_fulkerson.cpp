@@ -26,7 +26,7 @@ int fordFulkersonDFS(Graph& graph, int source, int sink) {
     }
     return maxFlow;
 }
-int fordFulkersonList(int s, int t, vector<vector<pair<int, int>>>& adj, vector<vector<int>>& capacity) {
+int fordFulkersonList(Graph& graph, int s, int t, vector<vector<pair<int, int>>>& adj, vector<vector<int>>& capacity) {
     int maxFlow = 0;
     vector<int> parent(adj.size(), -1);
 
