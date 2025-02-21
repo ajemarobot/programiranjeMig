@@ -258,6 +258,38 @@ public:
         }
         return "probably composite";
     }
+    bool miillerTest(LONG_INT d, LONG_INT n)
+    {
+
+        LONG_INT a = LONG_INT(this->data);
+        LONG_INT x = LONG_INT(LONG_INT(a^d)% n);
+
+        if (x == LONG_INT("1") || x == LONG_INT(n-LONG_INT("1")))
+            return true;
+
+        while (d != LONG_INT(n-LONG_INT("1")))
+        {
+            x = LONG_INT(LONG_INT(x * x) % n);
+            d = LONG_INT(d * LONG_INT("2"));
+            if (x == LONG_INT("1")) return false;
+            if (x == LONG_INT(n-LONG_INT("1"))) return true;
+        }
+        return false;
+    }
+
+    bool isPrime(LONG_INT k, LONG_INT n)
+    {
+        if (n <= LONG_INT("1") || n == LONG_INT("4")) return false;
+        if (n <= LONG_INT("3")) return true;
+        LONG_INT d = LONG_INT(n - LONG_INT("1"));
+        while (LONG_INT(d % LONG_INT("2")) == LONG_INT("0"))
+            d = LONG_INT(d / LONG_INT("2"));
+        for (LONG_INT i = LONG_INT("0"); i < k; i = LONG_INT(i + LONG_INT("1")))
+            if (!miillerTest(d, n))
+                return false;
+
+        return true;
+    }
 };
 
 int main()
